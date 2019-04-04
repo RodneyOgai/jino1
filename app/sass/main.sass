@@ -1,0 +1,338 @@
+body
+	margin: 0
+	padding: 0
+	color: #000
+	font-family: 'PT Sans', arial
+
+input , button
+	outline: none
+
+button
+	cursor: pointer
+
+.logo
+	// width: 100%
+	max-width: 80px
+	min-width: 60px
+
+.upper
+	text-transform: uppercase
+	font-size: 0.8em
+
+.text-logo
+	margin: 2%
+	&_white
+		color: #fff	
+	&_black
+		color: #000
+
+.h1 , .h3, .h4
+	color: #fff
+	text-align: center
+
+.h1
+	font-size: calc(100vw / 20)
+	margin-top: 10%
+
+.h3
+	font-size: calc(100vw / 40) 
+	margin-top: 2%
+	text-align: center
+
+.h4
+	margin-top: 2%
+	margin-bottom: 0
+	font-size: calc(100vw / 25)
+
+.check-wrapper
+	width: 100%
+	padding: 5% 0
+	position: relative
+	.check-input
+		position: absolute
+		top: 0
+		width: 100%
+		padding: 3.5%
+		border-radius: 5px
+		border: none
+		text-indent: 2%
+		font-size: calc(100vw / 60)
+		z-index: 2
+	.check-button
+		position: absolute
+		top: 15%
+		right: 2%
+		padding: 0
+		height: 80%
+		text-align: center
+		color: #fff
+		font-size: calc(100vw / 70)
+		border: none
+		z-index: 3
+		border-radius: 5px
+		background-color: #3f3f3f
+	.check-message
+		opacity: .75
+		width: 100%
+		position: absolute
+		background-color: #000
+		top: 90%
+		border-radius: 5px
+		text-align: center
+		z-index: 1
+		p
+			color: #fff
+			font-size: calc(100vw / 70)
+		span
+			color: #528939
+			text-decoration: underline
+			cursor: pointer
+
+.create-acc-button
+	width: 80%
+	display: block
+	padding: 6%
+	margin: 20% auto
+	text-align: center
+	background-color: #5d9d3f
+	color: #fff
+	border: none
+	border-radius: 5px
+	font-size: calc(100vw / 60)
+
+.button-down
+	img
+		width: 20%
+		display: block
+		margin: 0 auto
+		cursor: pointer
+		padding: 0
+
+.h2-wrapper
+	display: block
+	margin: 0 auto
+	.h2
+		font-size: calc(100vw / 40)
+		text-align: center
+
+.info-items
+	display: block
+	margin: 0 auto
+	cursor: pointer
+	text-align: center
+	p
+		font-weight: 400
+		font-size: calc(100vw / 80)
+		display: flex
+		align-items: center
+		justify-content: center
+
+	img
+		width: 50%
+
+.info
+	border: 1px solid #c5c6c5
+	background-color: #f8f8f8
+	border-radius: 5px
+	p
+		padding: 10px 40px
+		font-size: calc(100vw / 80)
+
+.footer
+	background-color: #fa005c
+	padding: 0 40px !important
+	p
+		color: #fff
+		font-size: calc(100vw / 80)
+		margin-top: 40px
+		vertical-align: middle
+		display: inline-block
+	.bonus
+		border-left: 1px solid #fff
+		padding-left: 40px
+		height: 100%
+		margin-left: 20px
+		font-size: calc(100vw / 40)
+		font-weight: 700
+		vertical-align: middle
+	img
+		vertical-align: middle
+		width: 10%
+		color: #fff
+
+.tov-znak
+	margin-top: 20px
+	font-size: calc(100vw / 98)
+	color: #fff
+
+#scrollBar
+	position: fixed
+	z-index: 9999999
+	top: 50%
+	bottom: 50%
+	right: 2%
+	.dots
+		width: 10px
+		height: 10px
+		margin-top: 10px
+		border-radius: 50%
+		border: 1px solid #000
+		background-color: #fff
+		cursor: pointer
+	.active
+		background-color: #000 !important
+		border: 1px solid #fff !important
+
+.triangle
+	position: relative
+	// width: 100%
+	display: block
+	margin: -20px auto
+	text-align: center
+.triangle:after 
+	content: ""
+	width: 0
+	height: 0
+	position: absolute
+	// left: 41%
+	top: -18%
+	border-bottom: 22px solid #f7f7f7
+	border-right: 21px solid transparent
+	border-left: 21px solid transparent
+.triangle:before 
+	content: ""
+	width: 0
+	height: 0
+	position: absolute
+	// left: 41%
+	top: -25%
+	border-bottom: 20px solid rgba(95, 96, 98, 0.5)
+	border-right: 21px solid transparent
+	border-left: 21px solid transparent
+
+
+.triangle-down
+	position: relative
+	// width: 100%
+	display: block
+	margin: 20px auto
+	text-align: center
+.triangle-down:after 
+	content: ""
+	width: 0
+	height: 0
+	position: absolute
+	// left: 41%
+	bottom: -18%
+	border-top: 22px solid #f7f7f7
+	border-right: 21px solid transparent
+	border-left: 21px solid transparent
+.triangle-down:before 
+	content: ""
+	width: 0
+	height: 0
+	position: absolute
+	// left: 41%
+	bottom: -25%
+	border-top: 20px solid rgba(95, 96, 98, 0.5)
+	border-right: 21px solid transparent
+	border-left: 21px solid transparent
+
+
+@media screen and (max-width: 818px)
+	.upper
+		font-size: 0.5rem
+	.info
+		p
+			font-size: calc(100vw / 50)
+	.triangle
+		position: relative
+		// width: 100%
+		display: block
+		margin: -10px auto
+		text-align: center
+	.triangle:after 
+		content: ""
+		width: 0
+		height: 0
+		position: absolute
+		// left: 41%
+		top: -8%
+		border-bottom: 12px solid #f7f7f7
+		border-right: 11px solid transparent
+		border-left: 11px solid transparent
+	.triangle:before 
+		content: ""
+		width: 0
+		height: 0
+		position: absolute
+		// left: 41%
+		top: -15%
+		border-bottom: 10px solid rgba(95, 96, 98, 0.5)
+		border-right: 11px solid transparent
+		border-left: 11px solid transparent
+	.triangle-down
+		position: relative
+		// width: 100%
+		display: block
+		margin: 10px auto
+		text-align: center
+	.triangle-down:after 
+		content: ""
+		width: 0
+		height: 0
+		position: absolute
+		// left: 41%
+		bottom: -28%
+		border-top: 12px solid #f7f7f7
+		border-right: 11px solid transparent
+		border-left: 11px solid transparent
+	.triangle-down:before 
+		content: ""
+		width: 0
+		height: 0
+		position: absolute
+		// left: 41%
+		bottom: -35%
+		border-top: 10px solid rgba(95, 96, 98, 0.5)
+		border-right: 11px solid transparent
+		border-left: 11px solid transparent
+	.info-items
+		p
+			font-size: calc(100vw / 50)
+	.h1
+		font-size: calc(100vw / 15)
+		margin-top: 2%
+	 
+	.h3
+		font-size: calc(100vw / 30) 
+		margin-top: 0
+	.h2-wrapper
+		.h2
+			font-size: calc(100vw / 20)
+	.h4
+		margin-top: 0
+		font-size: calc(100vw / 18)
+	.create-acc-button
+		margin: 0 auto
+		font-size: calc(100vw / 45)
+	.footer
+		margin-top: 5%
+		p
+			margin-top: 5%
+			font-size: calc(100vw / 55)
+		.plus-wrapper
+			margin-top: 5%
+		.bonus
+			padding-left: 10%
+			font-size: calc(100vw / 25)
+			margin-left: 4%
+		img
+			margin-top: -15%
+			width: 20%
+	#scrollBar
+		margin-top: -10px
+		.dots
+			width: 8px
+			height: 8px
+			margin-top: 10px

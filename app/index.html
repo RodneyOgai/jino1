@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Jino</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/grid.css">
+    <link href="http://allfont.ru/allfont.css?fonts=pt-sans" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-scrollto@2.7.9/vue-scrollto.js"></script>
+</head>
+<body>
+	<div id="app" v-scroll='onScroll'>
+		<div id="scrollBar">
+			<div class="dots" v-for="dot in dots" v-bind:class="{active: dot.isActive}" v-scroll-to="sElement" v-on:click="goTo(dot)"></div>
+		</div>
+		<div class="container" id="content-1" style="background-image: url(img/background1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+			<div class="grid-wrapper">
+				<div class="items-3 item-s-1">
+					<img src="img/logo-white.svg" alt="" class="logo">
+					<span class="text-logo_white upper">домены</span>
+				</div>
+				<div class="items-2 l-2 p-0">
+					<p class="text-logo_white upper">Только до 31 января</p>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="items-8 l-2">
+					<h1 class="h1">Честная цена <br> за домен .RU &mdash; 39₽</h1>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="items-8 l-2">
+					<div class="check-wrapper">
+						<input type="text" v-model="message"  v-on:keypress="pressEnter" placeholder="example.ru" class="check-input">
+						<button class="check-button items-2 l-10" v-on:click="domenName(message)">Проверить</button>
+						<div class="check-message" v-if="isTrue">
+							<p>Домен {{message}} &mdash; {{isFreeCallback}}. <span v-on:click="showForm">Зарегистрировать за 39₽</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="button-wrap items-4 l-4">
+					<button class="create-acc-button">Создать аккаунт</button>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="button-down items-2 l-5" v-scroll-to="'#content-2'">
+					<img src="img/down.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content-2">
+			<div class="grid-wrapper">
+				<div class="items-3">
+					<img src="img/logo-red.svg" alt="" class="logo">
+					<span class="text-logo_black upper">домены</span>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="h2-wrapper items-8 l-2">
+					<h2 class="h2">Зарегистрировав у нас домен, вы получите</h2>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="info-items items-3" v-on:click="viewInfoText(item)" 
+					 v-for="item in infoArray1">
+					<img :src="item.src" alt="">
+					<p>{{item.title}}</p>
+				</div>
+			</div>
+			<div class="grid-wrapper p-0" v-if="infoActive">
+				<div class="triangle items-1" v-bind:class="infoClass" v-if="triangle.up"></div>
+			</div>
+			<div class="grid-wrapper p-0" v-if="infoActive">
+				<div class="info items-12">
+					<p>{{infoText}}</p>
+				</div>
+			</div>
+			<div class="grid-wrapper p-0" v-if="infoActive">
+				<div class="triangle-down items-1" v-bind:class="infoClass" v-if="triangle.down"></div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="info-items items-3" v-on:click="viewInfoText(item)" 
+					 v-for="item in infoArray2">
+					<img :src="item.src" alt="">
+					<p>{{item.title}}</p>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="button-wrap items-4 l-4">
+					<button class="create-acc-button">Создать аккаунт</button>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content-3" style="background-image: url(img/background2.jpg); background-size: cover; background-repeat: no-repeat; background-position: center;">
+			<div class="grid-wrapper">
+				<div class="items-3">
+					<img src="img/logo-white.svg" alt="" class="logo">
+					<span class="text-logo_white upper">домены</span>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="items-6 l-3">
+					<h4 class="h3">
+						Почему стоит выбрать &laquo;Джино&raquo;?
+					</h4>
+				</div>
+			</div>
+			<div class="grid-wrapper">
+				<div class="items-10 l-1">
+					<h4 class="h4">
+						&laquo;Джино&raquo; более 18 лет на рынке, имеет 270 000 довольных клиентов, собственную панель управления и многое другое
+					</h4>
+				</div>
+			</div>
+			<div class="grid-wrapper p-0">
+				<div class="button-wrap items-4 l-4">
+					<button class="create-acc-button">Создать аккаунт</button>
+				</div>
+			</div>
+			<div class="grid-wrapper p-0">
+				<div class="footer items-12">
+					<p class="items-9">Вы получите 1000 баллов в системе лояльности Джино.Плюсы зарегистрировавшись в течение 24 часов после посещения данной страницы</p>
+					<div class="plus-wrapper items-3">
+						<p class="bonus">1000</p>
+						<img src="img/plus-normal.svg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="grid-wrapper p-0">
+				<p class="tov-znak items-12">&copy; &laquo;Джино&raquo;, 2003-2017. &laquo;Джино&raquo; является зарегистрированным товарным знаком. Лицензия на телематические услуги связи № 97495 от 09.03.2012. Правовая информация</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/common.js"></script>
+</body>
+</html>

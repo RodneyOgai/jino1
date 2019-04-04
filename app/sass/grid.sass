@@ -1,0 +1,140 @@
+html
+	box-sizing: border-box
+
+*,
+*::before,
+*::after
+	box-sizing: border-box
+
+.container
+	// width: 100%
+	height: 100%
+	max-width: 2600px
+
+.grid-wrapper
+	// border: 1px solid red
+	width: 90%
+	max-width: 1092px
+	min-width: 819px
+	margin: 0 auto
+	padding: 30px 0
+	// overflow: hidden
+	&::after
+		clear: both
+		content: ''
+		display: table
+
+[class*='items'] 
+	// border: 1px solid red
+	// width: 100%
+	padding: 0 12px
+	float: left
+	&:last-child
+		padding-right: 0
+	&:first-child
+		padding-left: 0
+
+
+.p-0
+	padding: 0 !important
+
+.items-12
+	width: 100%
+
+.items-11
+	width: calc((100% / 12) * 11)
+
+.items-10
+	width: calc((100% / 12) * 10)
+
+.items-9
+	width: calc((100% / 12) * 9)
+
+.items-8
+	width: calc((100% / 12) * 8)
+
+.items-7
+	width: calc((100% / 12) * 7)
+
+.items-6
+	width: calc((100% / 12) * 6)
+
+.items-5
+	width: calc((100% / 12) * 5)
+
+.items-4
+	width: calc((100% / 12) * 4)
+
+.items-3
+	width: calc((100% / 12) * 3)
+
+.items-2
+	width: calc((100% / 12) * 2)
+
+.items-1
+	width: calc((100% / 12) * 1)
+
+.l-1
+	margin-left: calc((100% / 12) * 1) !important
+	margin-right: 0
+
+.l-2
+	margin-left: calc((100% / 12) * 2) !important
+	margin-right: 0
+
+.l-3
+	margin-left: calc((100% / 12) * 3) !important
+	margin-right: 0
+
+.l-4
+	margin-left: calc((100% / 12) * 4) !important
+	margin-right: 0
+
+.l-5
+	margin-left: calc((100% / 12) * 5) !important
+	margin-right: 0
+
+.l-6
+	margin-left: calc((100% / 12) * 6) !important
+	margin-right: 0
+
+.l-7
+	margin-left: calc((100% / 12) * 7) !important
+	margin-right: 0
+
+.l-8
+	margin-left: calc((100% / 12) * 8) !important
+	margin-right: 0
+
+.l-9
+	margin-left: calc((100% / 12) * 9) !important
+	margin-right: 0
+
+.l-10
+	margin-left: calc((100% / 12) * 10) !important
+	margin-right: 0
+
+.l-11
+	margin-left: calc((100% / 12) * 11) !important
+	margin-right: 0
+
+@media screen and (max-width: 859px)
+	[class*='items'] 
+		padding: 0 9px
+		float: left
+		&:last-child
+			padding-right: 0
+		&:first-child
+			padding-left: 0
+		label
+			width: 100%
+
+@media screen and (max-width: 818px)
+	.grid-wrapper
+		min-width: 0
+	.container
+		// height: 85vh
+	[class*='items'] 
+		padding: 0
+		float: left
+
